@@ -1,4 +1,4 @@
-<script>
+document.addEventListener('DOMContentLoaded', function() {
     const slides = document.getElementById('slides');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -6,10 +6,9 @@
         mobileMenu.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
     mobileMenu.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
         });
     });
-</script>
+});
