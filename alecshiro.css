@@ -543,8 +543,9 @@
 
        nav {
             height: auto;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             padding: 10px 16px;
+            align-items: center;
         }
 
         .nav-links {
@@ -574,11 +575,11 @@
    /* Show slides, hide nav-links on mobile */
 
         .slides {
-            display: right;
+            display: flex;
         }
 
         .mobile-menu.open {
-            display: right;
+            display: flex;
        }
     }
         @media (max-width: 480px) {
