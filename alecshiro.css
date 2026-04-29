@@ -81,23 +81,6 @@
     .nav-links a:hover {
         color: #ffe0dc;
     }
-
-    .nav-icons {
-        display: flex;
-        gap: 18px;
-        color: white;
-        font-size: 1.2rem;
-    }
-
-    .nav-icons span {
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-
-    .nav-icons span:hover {
-        transform: scale(1.15);
-    }
-
     /* Hero part */
     .hero {
         background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 55%, #c0392b 100%);
