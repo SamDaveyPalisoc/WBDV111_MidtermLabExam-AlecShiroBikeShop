@@ -546,6 +546,7 @@
             flex-wrap: nowrap;
             padding: 10px 16px;
             align-items: center;
+            justify-content: space-between;
         }
 
         .nav-links {
