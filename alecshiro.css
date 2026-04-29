@@ -108,7 +108,7 @@
          flex-direction: column;
         background: #763434;
         position: fixed;
-        top: 40px; /* same as your nav height */
+        top: 75px; /* same as your nav height */
         left: 0;
         right: 0;
         z-index: 99;
@@ -572,3 +572,4 @@
         .social-icons {
             justify-content: center;
         }
+    }
