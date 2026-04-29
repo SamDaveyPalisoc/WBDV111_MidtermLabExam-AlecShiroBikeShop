@@ -82,8 +82,8 @@
         color: #ffe0dc;
     }
 
-    /* Hamburger button */
-        .hamburger {
+    /* slides button */
+        .slides {
         display: none;
         flex-direction: column;
         gap: 5px;
@@ -93,7 +93,7 @@
         padding: 4px;
     }
 
-    .hamburger span {
+    .slides span {
         display: block;
         width: 25px;
         height: 3px;
@@ -135,13 +135,13 @@
         border-bottom: none;
     }
 
-    /* Show hamburger, hide nav-links on mobile */
+    /* Show slides, hide nav-links on mobile */
     @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
 
-    .hamburger {
+    .slides {
         display: flex;
     }
 
