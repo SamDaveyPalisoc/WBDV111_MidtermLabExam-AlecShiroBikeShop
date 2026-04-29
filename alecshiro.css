@@ -529,7 +529,11 @@
         }
 
         .hero-image {
-            display: none;
+            display: none !important;
+        }
+
+        .hero-dots {
+            display: none !important;
         }
 
         .hero-text p {
