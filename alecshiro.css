@@ -31,7 +31,7 @@
     .announcement {
         background: var(--gray-dark);
         color: var(--white);
-        text-align: flex-start;
+        text-align: left;
         font-size: 0.85rem;
         font-weight: 600;
         letter-spacing: 0.12em;
@@ -109,9 +109,9 @@
          flex-direction: column;
         background: #763434;
         position: fixed;
-        top: 75px; /* same as your nav height */
-        left: 10;
-        right: 10;
+        top: 75px; 
+        left: 12px;
+        right: 12px;
         z-index: 99;
         border-bottom: 3px solid black;
         border-radius: 12px;
@@ -140,21 +140,6 @@
     .mobile-menu a:last-child {
         border-bottom: none;
     }
-
-    /* Show slides, hide nav-links on mobile */
-    @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .slides {
-        display: flex;
-    }
-
-    .mobile-menu.open {
-        display: flex;
-      }
-   }
         
     /* Hero part */
     .hero {
@@ -343,7 +328,7 @@
 
     .features-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 27px;
         margin-bottom: 36px;
     }
@@ -368,8 +353,8 @@
 
     .product-card .card-img {
         width: 100%;
-        aspect-ratio: 3/3;
-        object-fit: fill;
+        aspect-ratio: 16/9;
+        object-fit: cover;
         display: block;
         filter: brightness(0.88);
         transition: filter 0.22s;
@@ -549,11 +534,10 @@
         }
 
         .features-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .footer-grid {
             grid-template-columns: 1fr 1fr;
+        }
+        .product-card { 
+            border-radius: 16px; 
         }
 
        nav {
@@ -571,15 +555,50 @@
             margin-left: 0;
         }
 
-        .features-grid {
-            grid-template-columns: 1fr;
-        }
-
         .footer-grid {
             grid-template-columns: 1fr;
         }
 
         .social-icons {
             justify-content: center;
+        }
+   /* Show slides, hide nav-links on mobile */
+
+        .slides {
+            display: flex;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+       }
+    }
+        @media (max-width: 480px) {
+                
+        .hero { 
+                padding: 36px 20px; 
+        }
+
+        .about { 
+                padding: 36px 20px; 
+        }
+
+        .features { 
+                padding: 36px 16px; 
+        }
+
+        .features-grid { 
+                grid-template-columns: 1fr; 
+        }
+
+        .product-card .card-img { 
+                aspect-ratio: 4/3; 
+        }
+
+        footer { 
+                padding: 36px 16px 20px; 
+        }
+                
+        .footer-grid { 
+                grid-template-columns: 1fr; 
         }
     }
