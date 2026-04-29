@@ -482,6 +482,7 @@
         display: flex;
         margin-left: 0;
         height: 80px;
+        justify-content: center;
 
     }
 
@@ -559,17 +560,25 @@
             grid-template-columns: 1fr;
         }
 
+        .footer-col {
+            text-align: center;
+        }
+
+        .footer-logo {
+            justify-content: center;
+        }
+
         .social-icons {
             justify-content: center;
         }
    /* Show slides, hide nav-links on mobile */
 
         .slides {
-            display: flex;
+            display: right;
         }
 
         .mobile-menu.open {
-            display: flex;
+            display: right;
        }
     }
         @media (max-width: 480px) {
