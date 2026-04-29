@@ -1,8 +1,8 @@
 <script>
-    const hamburger = document.getElementById('hamburger');
+    const slides = document.getElementById('slides');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    hamburger.addEventListener('click', () => {
+    slides.addEventListener('click', () => {
         mobileMenu.classList.toggle('open');
     });
 
