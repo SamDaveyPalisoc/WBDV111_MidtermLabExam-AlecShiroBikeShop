@@ -481,9 +481,16 @@
         margin-bottom: 8px;
         display: flex;
         margin-left: 0;
-        height: 80px;
-        justify-content: center;
+        height: 60px;
+        justify-content: left;
 
+    }
+
+    .footer-logo img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+            
     }
 
     .social-icons {
