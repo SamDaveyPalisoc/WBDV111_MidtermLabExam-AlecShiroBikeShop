@@ -762,6 +762,7 @@ footer {
 @media (max-width: 768px) {
     nav {
         height: auto;
+        overflow: visible;
         padding: 10px 16px;
         display: flex;
         justify-content: space-between;
@@ -771,6 +772,10 @@ footer {
     .nav-logo {
         height: 50px;
         margin-left: 0;
+    }
+
+    .slides {
+        display: flex !important;
     }
 
     .nav-links {
