@@ -603,6 +603,7 @@
 
      nav {
          height: 60px;
+         overflow: hidden;
          flex-wrap: nowrap;
          padding: 8px 16px;
          align-items: center;
@@ -616,6 +617,11 @@
      .nav-logo {
          height: 44px;
          margin-left: 0;
+     }
+
+     .nav-logo img {
+         height: 40px;
+         width: auto;
      }
 
      .footer-grid {
@@ -635,7 +641,7 @@
      }
 
      .slides {
-        display: flex !important;
+         display: flex !important;
      }
 
      .mobile-menu.open {
