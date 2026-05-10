@@ -69,7 +69,7 @@
  .nav-logo {
      display: flex;
      margin-left: 16px;
-     height: 85px;
+     height: 75px;
      gap: 10px;
      cursor: pointer;
  }
