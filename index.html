@@ -14,53 +14,58 @@
 <body>
 
     <!-- announcement var -->
-    <div class="announcement">Free Shipping Nationwide</div>
+    <div class="sticky-header">
+        <div class="announcement">Free Shipping Nationwide</div>
 
-    <!-- navigation part -->
-    <nav>
-        <div class="nav-logo">
-            <img src="bike/logo.png" alt="nav-logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Parts</a></li>
-        </ul>
-    
-    
-    <!-- button for responsive -->
-    <button class="slides" id="slides">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    </nav>
+        <!-- navigation part -->
+        <nav>
+            <div class="nav-logo">
+                <img src="bike/logo.png" alt="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-    
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#contact">Contact</a>
-        <a href="#">Parts</a>
+
+            <!-- button for responsive -->
+            <button class="slides" id="slides">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="product.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
 
     <!-- hero part -->
     <section class="hero" id="home">
         <div class="hero-text">
             <h1>Affordable Mountain<br>Bikes and Accessories</h1>
             <p>Providing quality bikes, accessories, parts, and more</p>
-            <button class="Shop-now">Shop Now</button>
+            <button class="Shop-now" onclick="window.location.href='product.html?category=whole bike'">
+                Shop Now
+            </button>
         </div>
+
         <div class="hero-image">
-            <img src="bike/display.png" alt="Mountain Bike">
+            <img src="bike/bike4.png" alt="Mountain Bike" id="hero-img">
         </div>
+
         <div class="hero-dots">
-            <span class="active"></span>
-            <span></span>
-            <span></span>
+            <span class="active" onclick="goToSlide(0)"></span>
+            <span onclick="goToSlide(1)"></span>
+            <span onclick="goToSlide(2)"></span>
         </div>
     </section>
 
@@ -73,38 +78,38 @@
 
     <!-- features and product part -->
     <section class="features" id="features">
-        <h2>Features</h2>
+        <h2>New drop! check now</h2>
         <div class="features-grid">
 
-            <div class="product-card">
-                <img src="bike/rigidfork.png" class="card-img" alt="Rigid fork - tanke tf11 carbon thru axle">
+            <div class="product-card" onclick="window.location.href='product.html?category=fork'">
+                <img src="fork/peak.webp" class="card-img" alt="MountainPeak XS-1 Air Fork 27.5/29er">
                 <div class="card-body">
-                    <h3>Rigid fork - tanke tf11 carbon thru axle</h3>
-                    <div class="card-price">₱4,200</div>
+                    <h3>MountainPeak XS-1 Air Fork 27.5/29er</h3>
+                    <div class="card-price">₱3,399</div>
                     <div class="card-social">Like &amp; follow us @AlecShiro.Bikeshop</div>
                 </div>
             </div>
 
-            <div class="product-card">
-                <img src="bike/helmet.png" class="card-img" alt="Helmet">
+            <div class="product-card" onclick="window.location.href='product.html?category=accessories'">
+                <img src="accessories/hjc.webp" class="card-img" alt="accessories/hjc.webp">
                 <div class="card-body">
-                    <h3>Helmet</h3>
-                    <div class="card-price">₱380</div>
+                    <h3>HJC IBEX Aero Ultralight Men's Women's Road Bicycle</h3>
+                    <div class="card-price">₱1,054</div>
                     <div class="card-social">Like &amp; follow us @AlecShiro.Bikeshop</div>
                 </div>
             </div>
 
-            <div class="product-card">
-                <img src="bike/pedal.png" class="card-img" alt="Mountainpeak pedal">
+            <div class="product-card" onclick="window.location.href='product.html?category=frame'">
+                <img src="frame/sagmit.png" class="card-img" alt="Sagmit Brooklyn V2R MTB Frame 2023">
                 <div class="card-body">
-                    <h3>Mountainpeak pedal</h3>
-                    <div class="card-price">₱300</div>
+                    <h3>Sagmit Brooklyn V2R MTB Frame 2023</h3>
+                    <div class="card-price">₱6,698</div>
                     <div class="card-social">Like &amp; follow us @AlecShiro.Bikeshop</div>
                 </div>
             </div>
 
         </div>
-        <button class="viewmore">View More</button>
+        <button class="viewmore" onclick="window.location.href='product.html'">View More</button>
     </section>
 
     <!-- footer part-->
@@ -113,13 +118,14 @@
             <div class="footer-col">
                 <h4>Seller of Affordable Bikes in Rizal</h4>
                 <div class="footer-logo">
-                <img src="bike/logo.png" alt="nav-logo">
+                    <img src="bike/logo.png" alt="nav-logo">
                 </div>
                 <p>Philippines</p>
             </div>
             <div class="footer-col">
                 <h4>FIND US</h4>
-                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fmaps.app.goo.gl%2FgtPSEGBMy5m242mx9%3Fg_st%3Dafm%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExYkNsVEE0Q2NNejY0SkNBRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7v_XQxZQk9dtk5l97BIq5RFMmrKgDLzZ0uz5YbXGeWYVgiIK2OlicVuqOOvg_aem_fNDN8txogeLXkmqT7_eclw&h=AT6C9YFQZHKzSi_noBIdFuezOlxSajaeEmJbgM2L6mIIeApquZMTfxQIhjwGASBklUS-EWm7BVuBWgSCxXADmlYj9u8K0FfCHoqz_UzCoEusaQJ5jsQC501Up5pNeTY">
+                <a
+                    href="https://l.facebook.com/l.php?u=https%3A%2F%2Fmaps.app.goo.gl%2FgtPSEGBMy5m242mx9%3Fg_st%3Dafm%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExYkNsVEE0Q2NNejY0SkNBRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7v_XQxZQk9dtk5l97BIq5RFMmrKgDLzZ0uz5YbXGeWYVgiIK2OlicVuqOOvg_aem_fNDN8txogeLXkmqT7_eclw&h=AT6C9YFQZHKzSi_noBIdFuezOlxSajaeEmJbgM2L6mIIeApquZMTfxQIhjwGASBklUS-EWm7BVuBWgSCxXADmlYj9u8K0FfCHoqz_UzCoEusaQJ5jsQC501Up5pNeTY">
                     Purok #338 Marcos Highway, St. Anthony Brgy. Inarawan, Antipolo City
                 </a>
             </div>
@@ -147,11 +153,13 @@
                 <i class="fa-brands fa-instagram"></i>
             </a>
 
-           <a href="https://www.tiktok.com/@alecshirobikeshop042021?is_from_webapp=1&sender_device=pc" target="_blank" title="TikTok">
+            <a href="https://www.tiktok.com/@alecshirobikeshop042021?is_from_webapp=1&sender_device=pc" target="_blank"
+                title="TikTok">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
 
-           <a href="https://shopee.ph/alecshirobikeshop?fbclid=IwY2xjawRNTXJleHRuA2FlbQIxMABicmlkETFmbExmSG5IVVl5cGpXOWdMc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqBVKND86OTVWKjhIGQugpQKctATEGevF7S3b-XIRWy2eVPs_m4x6i1qGTGz_aem_woAbLzaPpc5xTKg3a5E2Xg" target="_blank" title="Shopee">
+            <a href="https://shopee.ph/alecshirobikeshop?fbclid=IwY2xjawRNTXJleHRuA2FlbQIxMABicmlkETFmbExmSG5IVVl5cGpXOWdMc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqBVKND86OTVWKjhIGQugpQKctATEGevF7S3b-XIRWy2eVPs_m4x6i1qGTGz_aem_woAbLzaPpc5xTKg3a5E2Xg"
+                target="_blank" title="Shopee">
                 <i class="fa-solid fa-bag-shopping"></i>
             </a>
         </div>
