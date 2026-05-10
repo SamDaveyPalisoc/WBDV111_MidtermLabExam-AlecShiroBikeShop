@@ -602,10 +602,10 @@
      }
 
      nav {
-         height: 60px;
-         overflow: hidden;
+         height: auto;
+         overflow: visible;
          flex-wrap: nowrap;
-         padding: 8px 16px;
+         padding: 10px 16px;
          align-items: center;
          justify-content: space-between;
      }
