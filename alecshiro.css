@@ -69,7 +69,7 @@
  .nav-logo {
      display: flex;
      margin-left: 16px;
-     height: 100px;
+     height: 90px;
      gap: 10px;
      cursor: pointer;
  }
@@ -615,12 +615,12 @@
      }
 
      .nav-logo {
-        height: 65px;
+        height: 60px;
          margin-left: 0;
      }
 
      .nav-logo img {
-         height: 65px;
+         height: 60px;
          width: auto;
      }
 
