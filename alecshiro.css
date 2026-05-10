@@ -635,7 +635,7 @@
      }
 
      .slides {
-         display: flex;
+        display: flex !important;
      }
 
      .mobile-menu.open {
