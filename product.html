@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AlecShiro Bikeshop — Products</title>
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="bike/logo.png">
+
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- announcement var -->
+    <div class="sticky-header">
+    <div class="announcement">Free Shipping Nationwide</div>
+
+    <nav>
+        <div class="nav-logo">
+            <img src="bike/logo.png" alt="nav-logo">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT</a></li>
+            <li><a href="product.html">PRODUCT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="cart-btn" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping" style="font-size: 0.9rem;"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+            <button class="burger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+        <a href="index.html">HOME</a>
+        <a href="aboutus.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="controls">
+        <button class="filter-btn active" data-cat="all">All Parts</button>
+        <button class="filter-btn" data-cat="drivetrain">Drivetrain</button>
+        <button class="filter-btn" data-cat="brakes">Brakes</button>
+        <button class="filter-btn" data-cat="fork">Fork</button>
+        <button class="filter-btn" data-cat="wheels">Wheels</button>
+        <button class="filter-btn" data-cat="cockpit">Cockpit</button>
+        <button class="filter-btn" data-cat="frame">Frame</button>
+        <button class="filter-btn" data-cat="accessories">Accessories</button>
+        <button class="filter-btn" data-cat="whole bike">Whole Bike</button>
+        <div class="search-wrap">
+            <input type="text" id="search-input" placeholder="Search parts...">
+        </div>
+    </div>
+
+    <section class="products-section">
+        <div class="results-count" id="results-count">24 products</div>
+        <div class="products-grid" id="grid">
+            <div class="empty" id="empty-state">
+                <div style="font-size:2.5rem">🔍</div>
+                <p>No parts found. Try a different filter or search term.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal-bg" id="modal-bg" onclick="closeModal(event)">
+        <div class="modal" id="modal">
+            <button class="modal-close" onclick="closeModalDirect()">✕</button>
+            <div class="modal-img" id="modal-img"></div>
+            <div class="modal-body">
+                <div class="modal-category" id="modal-category"></div>
+                <div class="modal-name" id="modal-name"></div>
+                <div class="modal-desc" id="modal-desc"></div>
+                <div class="modal-specs" id="modal-specs"></div>
+                <div class="modal-actions">
+                    <div class="modal-price" id="modal-price"></div>
+                    <button class="modal-add-btn" id="modal-add-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Added to cart!</div>
+
+    <!-- footer part-->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Seller of Affordable Bikes in Rizal</h4>
+                <div class="footer-logo">
+                    <img src="bike/logo.png" alt="nav-logo">
+                </div>
+                <p>Philippines</p>
+            </div>
+            <div class="footer-col">
+                <h4>FIND US</h4>
+                <a
+                    href="https://l.facebook.com/l.php?u=https%3A%2F%2Fmaps.app.goo.gl%2FgtPSEGBMy5m242mx9%3Fg_st%3Dafm%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExYkNsVEE0Q2NNejY0SkNBRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7v_XQxZQk9dtk5l97BIq5RFMmrKgDLzZ0uz5YbXGeWYVgiIK2OlicVuqOOvg_aem_fNDN8txogeLXkmqT7_eclw&h=AT6C9YFQZHKzSi_noBIdFuezOlxSajaeEmJbgM2L6mIIeApquZMTfxQIhjwGASBklUS-EWm7BVuBWgSCxXADmlYj9u8K0FfCHoqz_UzCoEusaQJ5jsQC501Up5pNeTY">
+                    Purok #338 Marcos Highway, St. Anthony Brgy. Inarawan, Antipolo City
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Schedule Time</h4>
+                <p>9:00am – 10:00pm<br>Mon–Sun</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <address>
+                    AlecShiro Bike Shop<br>
+                    @AlecShiroBikeShop<br>
+                    +63 906 259 0820<br>
+                    +63 947 491 4021
+                </address>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/MountainBikeRizal" target="_blank" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/alecshirobikeshop/" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@alecshirobikeshop042021?is_from_webapp=1&sender_device=pc" target="_blank"
+                title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="https://shopee.ph/alecshirobikeshop?fbclid=IwY2xjawRNTXJleHRuA2FlbQIxMABicmlkETFmbExmSG5IVVl5cGpXOWdMc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqBVKND86OTVWKjhIGQugpQKctATEGevF7S3b-XIRWy2eVPs_m4x6i1qGTGz_aem_woAbLzaPpc5xTKg3a5E2Xg"
+                target="_blank" title="Shopee">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+        </div>
+        <p class="footer-bottom">© 2021 Alec Shiro Bike Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

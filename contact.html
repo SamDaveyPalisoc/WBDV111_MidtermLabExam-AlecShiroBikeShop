@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AlecShiro Bike Shop</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="bike/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+    <!-- announcement var -->
+    <div class="sticky-header">
+    <div class="announcement">Free Shipping Nationwide</div>
+
+    <!-- navigation part -->
+    <nav>
+        <div class="nav-logo">
+            <img src="bike/logo.png" alt="nav-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+
+        <!-- button for responsive -->
+        <button class="slides" id="slides">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+        <button class="menu-close" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About</a>
+        <a href="product.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+
+        <!-- FORM SIDE -->
+        <div id="formContainer">
+            <h2>Contact Form</h2>
+
+            <form id="contactForm" action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <!-- Hidden -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="index.html">
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+            <p id="formStatus"></p>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div id="contactInfo">
+            <h2>Contact Us</h2>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Address:</strong><br>
+                    <a href="https://maps.app.goo.gl/gtPSEGBMy5m242mx9" target="_blank">
+                        Purok #338 Marcos Highway, St. Anthony Brgy. Inarawan,
+                        Antipolo City
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <strong>Phone:</strong><br>
+                    +63 906 259 0820<br>
+                    +63 947 491 4021
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <strong>Email:</strong><br>
+                    alecshiro23@gmail.com
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <div>
+                    <a href="https://www.tiktok.com/@alecshirobikeshop042021?is_from_webapp=1&sender_device=pc"
+                        target="_blank">
+                        @alecshirobikeshop042021
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <div>
+                    <a href="https://www.instagram.com/alecshirobikeshop/" target="_blank">
+                        @alecshirobikeshop
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-facebook"></i>
+                <div>
+                    <a href="https://www.facebook.com/MountainBikeRizal" target="_blank">
+                        facebook.com/alecshirobikeshop
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-shopping-bag"></i>
+                <div>
+                    <a href="https://shopee.ph/alecshirobikeshop" target="_blank">
+                        shopee.ph/alecshirobikeshop
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- footer part-->
+    <footer id="main-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Seller of Affordable Bikes in Rizal</h4>
+                <div class="footer-logo">
+                    <img src="bike/logo.png" alt="nav-logo">
+                </div>
+                <p>Philippines</p>
+            </div>
+            <div class="footer-col">
+                <h4>FIND US</h4>
+                <a
+                    href="https://l.facebook.com/l.php?u=https%3A%2F%2Fmaps.app.goo.gl%2FgtPSEGBMy5m242mx9%3Fg_st%3Dafm%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExYkNsVEE0Q2NNejY0SkNBRXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR7v_XQxZQk9dtk5l97BIq5RFMmrKgDLzZ0uz5YbXGeWYVgiIK2OlicVuqOOvg_aem_fNDN8txogeLXkmqT7_eclw&h=AT6C9YFQZHKzSi_noBIdFuezOlxSajaeEmJbgM2L6mIIeApquZMTfxQIhjwGASBklUS-EWm7BVuBWgSCxXADmlYj9u8K0FfCHoqz_UzCoEusaQJ5jsQC501Up5pNeTY">
+                    Purok #338 Marcos Highway, St. Anthony Brgy. Inarawan, Antipolo City
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Schedule Time</h4>
+                <p>9:00am – 10:00pm<br>Mon–Sun</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <address>
+                    AlecShiro Bike Shop<br>
+                    @AlecShiroBikeShop<br>
+                    +63 906 259 0820<br>
+                    +63 947 491 4021
+                </address>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/MountainBikeRizal" target="_blank" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/alecshirobikeshop/" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@alecshirobikeshop042021?is_from_webapp=1&sender_device=pc" target="_blank"
+                title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="https://shopee.ph/alecshirobikeshop?fbclid=IwY2xjawRNTXJleHRuA2FlbQIxMABicmlkETFmbExmSG5IVVl5cGpXOWdMc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqBVKND86OTVWKjhIGQugpQKctATEGevF7S3b-XIRWy2eVPs_m4x6i1qGTGz_aem_woAbLzaPpc5xTKg3a5E2Xg"
+                target="_blank" title="Shopee">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+        </div>
+        <p class="footer-bottom">© 2021 Alec Shiro Bike Shop. All Rights Reserved.</p>
+    </footer>
+
+    <!-- External JS -->
+    <script src="contact.js"></script>
+
+</body>
+
+</html>
