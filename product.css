@@ -774,6 +774,11 @@ footer {
         margin-left: 0;
     }
 
+    .nav-logo img {
+    height: 50px;
+    width: auto;
+    }
+    
     .slides {
         display: flex !important;
     }
