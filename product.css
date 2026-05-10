@@ -784,7 +784,9 @@ footer {
     }
 
     .nav-links {
-        display: none;
+       display: none;
+        position: static;
+        transform: none;  
     }
 
     .burger {
