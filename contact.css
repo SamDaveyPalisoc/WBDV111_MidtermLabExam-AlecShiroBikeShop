@@ -11,8 +11,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-position: center;
-    background-size: cover;
+    background: linear-gradient(160deg, #c0392b 0%, #7b0000 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -188,33 +188,37 @@ nav {
     gap: 20px;
     width: 100%;
     max-width: 100%;
-    background: rgba(255, 255, 255, 0.08);
+    background: transparent;
     border-radius: 0;
-    padding: 25px;
+    padding: 40px 25px;
     border: none;
     box-shadow: none;
+    flex: 1;
 }
 
 /* FORM */
 #formContainer {
     flex: 1;
-    background: linear-gradient(135deg, #cb1111 0%, #050000 100%);
+    background: rgba(0, 0, 0, 0.35);
     padding: 40px;
     border-radius: 15px;
     color: white;
-    border: 3px solid #111;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
 }
 
 #formContainer h2 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 30px;
+    color: #fff;
 }
 
 label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: #fff;
 }
 
 input,
@@ -226,19 +230,25 @@ textarea {
     border-radius: 8px;
     outline: none;
     font-size: 15px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.45);
 }
 
 textarea {
     resize: none;
 }
 
-button {
+button[type="submit"] {
     width: 100%;
     padding: 14px;
     border: none;
     border-radius: 8px;
-    background: #ff4b5c;
+    background: #e74c3c;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -246,8 +256,8 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
-    background: #ff2e43;
+button[type="submit"]:hover {
+    background: #c0392b;
     transform: scale(1.03);
 }
 
@@ -256,6 +266,7 @@ button:hover {
     margin-top: 15px;
     font-weight: bold;
     transition: opacity 0.5s ease;
+    color: #fff;
 }
 
 /* CONTACT INFO */
@@ -265,8 +276,8 @@ button:hover {
     padding: 40px;
     border-radius: 15px;
     color: #222;
-    border: 3px solid #111;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 #contactInfo h2 {
@@ -433,7 +444,7 @@ footer {
         font-size: 14px;
     }
 
-    button {
+    button[type="submit"] {
         padding: 12px;
         font-size: 15px;
     }
@@ -451,6 +462,7 @@ footer {
 
 /* EXTRA SMALL */
 @media(max-width: 400px) {
+
     #formContainer,
     #contactInfo {
         padding: 15px;
@@ -461,7 +473,7 @@ footer {
         font-size: 20px;
     }
 
-    button {
+    button[type="submit"] {
         font-size: 14px;
     }
 
