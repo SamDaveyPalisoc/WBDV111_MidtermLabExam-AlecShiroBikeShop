@@ -16,7 +16,6 @@ const products = [
         }
     },
 
-
     {
         id: 2,
         cat: 'drivetrain',
@@ -119,7 +118,7 @@ const products = [
         name: 'Shimano Claris BR-R2000 Brake Caliper',
         img: 'brakes/claris.webp',
         desc: 'Dual pivot brake with SLR technology for faster response and optimized braking. Includes R50T2 brake shoes for reliable performance in dry and wet conditions.',
-        price: 1699, //
+        price: 1699,
         badge: 'sale',
         specs: {
             type: 'Mechanical',
@@ -144,7 +143,6 @@ const products = [
             compatibility: 'SLX / XT / XTR / Deore'
         }
     },
-
 
     {
         id: 10,
@@ -402,7 +400,6 @@ const products = [
         }
     },
 
-
     {
         id: 26,
         cat: 'frame',
@@ -565,7 +562,7 @@ const products = [
 
 ];
 
-let cart = [];
+let cart = []; // { id, qty }
 let activeFilter = 'all';
 let searchTerm = '';
 
@@ -634,19 +631,96 @@ function openModal(p) {
 function closeModal(e) {
     if (e.target === document.getElementById('modal-bg')) closeModalDirect();
 }
+
 function closeModalDirect() {
     document.getElementById('modal-bg').classList.remove('open');
     document.body.style.overflow = '';
 }
 
 function addToCart(id) {
-    cart.push(id);
-    document.getElementById('cart-count').textContent = cart.length;
+    const existing = cart.find(i => i.id === id);
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({ id, qty: 1 });
+    }
+    updateCartCount();
+    renderCartDrawer();
     showToast('Added to cart!');
 }
 
+function updateCartCount() {
+    const total = cart.reduce((sum, i) => sum + i.qty, 0);
+    document.getElementById('cart-count').textContent = total;
+}
+
 function openCart() {
-    showToast(`${cart.length} item${cart.length !== 1 ? 's' : ''} in your cart`);
+    document.getElementById('cart-drawer').classList.add('open');
+    document.getElementById('cart-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+    document.getElementById('cart-drawer').classList.remove('open');
+    document.getElementById('cart-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function changeQty(id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+    updateCartCount();
+    renderCartDrawer();
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    updateCartCount();
+    renderCartDrawer();
+}
+
+function renderCartDrawer() {
+    const container = document.getElementById('cart-items');
+    const footer = document.getElementById('cart-footer');
+
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="cart-empty">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Your cart is empty</p>
+            </div>`;
+        footer.style.display = 'none';
+        return;
+    }
+
+    footer.style.display = 'block';
+
+    let total = 0;
+    container.innerHTML = cart.map(item => {
+        const p = products.find(x => x.id === item.id);
+        const subtotal = p.price * item.qty;
+        total += subtotal;
+        return `
+        <div class="cart-item">
+            <img class="cart-item-img" src="${p.img}" alt="${p.name}">
+            <div class="cart-item-info">
+                <div class="cart-item-name">${p.name}</div>
+                <div class="cart-item-price">₱${subtotal.toLocaleString()}</div>
+                <div class="cart-item-qty">
+                    <button class="qty-btn" onclick="changeQty(${p.id}, -1)">−</button>
+                    <span class="qty-num">${item.qty}</span>
+                    <button class="qty-btn" onclick="changeQty(${p.id}, 1)">+</button>
+                </div>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${p.id})">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>`;
+    }).join('');
+
+    document.getElementById('cart-total-price').textContent = '₱' + total.toLocaleString();
 }
 
 let toastTimer;
@@ -673,7 +747,7 @@ document.getElementById('search-input').addEventListener('input', e => {
 });
 
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModalDirect();
+    if (e.key === 'Escape') { closeModalDirect(); closeCart(); }
 });
 
 const modalImg = document.getElementById('modal-img');
@@ -701,12 +775,9 @@ const params = new URLSearchParams(window.location.search);
 const category = params.get("category");
 
 if (category) {
-
     const targetBtn = document.querySelector(`[data-cat="${category}"]`);
-
-    if (targetBtn) {
-        targetBtn.click();
-    }
+    if (targetBtn) targetBtn.click();
 }
 
 renderGrid();
+renderCartDrawer();
