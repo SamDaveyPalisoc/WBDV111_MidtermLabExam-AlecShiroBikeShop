@@ -17,32 +17,32 @@
 <body>
     <!-- announcement var -->
     <div class="sticky-header">
-    <div class="announcement">Free Shipping Nationwide</div>
+        <div class="announcement">Free Shipping Nationwide</div>
 
-    <nav>
-        <div class="nav-logo">
-            <img src="bike/logo.png" alt="nav-logo">
-        </div>
+        <nav>
+            <div class="nav-logo">
+                <img src="bike/logo.png" alt="nav-logo">
+            </div>
 
-        <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="aboutus.html">ABOUT</a></li>
-            <li><a href="product.html">PRODUCT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT</a></li>
+                <li><a href="product.html">PRODUCT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
 
-        <div class="nav-right">
-            <button class="cart-btn" onclick="openCart()">
-                <i class="fa-solid fa-cart-shopping" style="font-size: 0.9rem;"></i>
-                <span class="cart-count" id="cart-count">0</span>
-            </button>
-            <button class="burger" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+            <div class="nav-right">
+                <button class="cart-btn" onclick="openCart()">
+                    <i class="fa-solid fa-cart-shopping" style="font-size: 0.9rem;"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="burger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
     </div>
 
     <!-- Mobile Menu -->
@@ -99,6 +99,23 @@
 
     <!-- Toast -->
     <div class="toast" id="toast">Added to cart!</div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>YOUR CART</h3>
+            <button class="cart-drawer-close" onclick="closeCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-drawer-footer" id="cart-footer">
+            <div class="cart-total">
+                <span>TOTAL</span>
+                <span id="cart-total-price">₱0</span>
+            </div>
+            <button class="checkout-btn">CHECKOUT</button>
+        </div>
+    </div>
 
     <!-- footer part-->
     <footer id="contact">
